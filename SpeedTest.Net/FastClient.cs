@@ -7,12 +7,13 @@ namespace SpeedTest.Net
     public static class FastClient
     {
         private static FastHttpClient Client => new FastHttpClient();
+        public static int Test { get; set; }
 
         /// <summary>
         /// Calculates download speed using the provided server
         /// </summary>
         /// <param name="unit">Specifies in which unit download speed should be returned</param>
         /// <returns>An instance of type DownloadSpeed</returns>
-        public static async Task<DownloadSpeed> GetDownloadSpeed(SpeedTestUnit unit = SpeedTestUnit.KiloBytesPerSecond) => await Client?.GetDownloadSpeed(unit);
+        public static async Task<DownloadSpeed> GetDownloadSpeed( SpeedTestUnit unit = SpeedTestUnit.KiloBytesPerSecond) => await Client?.GetDownloadSpeed(unit);
     }
 }
